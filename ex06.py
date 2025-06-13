@@ -19,10 +19,12 @@ logs = [
 # }
 
 
-contagem_acessos = {}
+contagem_acessos = {} # criando um dicionário vazio para armazenar a contagem de acessos
+# Percorre a lista de logs e conta os acessos por IP e página
 for log in logs:
-    ip = log["ip"]
-    pagina = log["pagina"]
+    ip = log["ip"] # Obtém o IP do log 
+    pagina = log["pagina"] # Obtém a página acessada do log
+    # Verifica se o IP já está no dicionário, se não estiver, inicializa com um dicionário vazio
     if ip not in contagem_acessos:
         contagem_acessos[ip] = {}  # Inicializa o dicionário para o IP
     if pagina in contagem_acessos[ip]:
